@@ -1,0 +1,435 @@
+ <!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Refleksi Mengajar</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div>
+
+            <h1>
+                Refleksi Mengajar
+            </h1>
+
+            <p>
+                Catatan refleksi dan rencana tindak lanjut pembelajaran
+            </p>
+
+        </div>
+
+
+        <button
+            id="btnTambahRefleksi"
+            class="btn btn-primary"
+        >
+            + Tambah Refleksi
+        </button>
+
+    </header>
+
+
+    <!-- FORM -->
+
+    <section
+        id="formRefleksiSection"
+        class="card hidden"
+    >
+
+        <div class="card-header">
+
+            <h2 id="formRefleksiTitle">
+                Tambah Refleksi Mengajar
+            </h2>
+
+        </div>
+
+
+        <form id="refleksiForm">
+
+            <input
+                type="hidden"
+                id="refleksiId"
+            >
+
+
+            <div class="form-grid">
+
+
+                <!-- KELAS -->
+
+                <div class="form-group">
+
+                    <label for="kelas">
+                        Kelas
+                    </label>
+
+                    <input
+                        type="text"
+                        id="kelas"
+                        placeholder="Contoh: X RPL 1"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- MAPEL -->
+
+                <div class="form-group">
+
+                    <label for="mapel">
+                        Mapel
+                    </label>
+
+                    <input
+                        type="text"
+                        id="mapel"
+                        placeholder="Contoh: Informatika"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- NO -->
+
+                <div class="form-group">
+
+                    <label for="no">
+                        No
+                    </label>
+
+                    <input
+                        type="number"
+                        id="no"
+                        min="1"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- TANGGAL -->
+
+                <div class="form-group">
+
+                    <label for="tanggal">
+                        Tanggal
+                    </label>
+
+                    <input
+                        type="date"
+                        id="tanggal"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CP -->
+
+                <div class="form-group full">
+
+                    <label for="cp">
+                        Capaian Pembelajaran (CP)
+                    </label>
+
+                    <textarea
+                        id="cp"
+                        rows="4"
+                        placeholder="Tuliskan capaian pembelajaran..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- TP -->
+
+                <div class="form-group full">
+
+                    <label for="tp">
+                        Tujuan Pembelajaran (TP)
+                    </label>
+
+                    <textarea
+                        id="tp"
+                        rows="4"
+                        placeholder="Tuliskan tujuan pembelajaran..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- MODEL / METODE -->
+
+                <div class="form-group full">
+
+                    <label for="modelMetode">
+                        Model / Metode
+                    </label>
+
+                    <input
+                        type="text"
+                        id="modelMetode"
+                        placeholder="Contoh: Problem Based Learning / Diskusi"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CATATAN REFLEKSI -->
+
+                <div class="form-group full">
+
+                    <label for="catatanRefleksi">
+                        Catatan Refleksi
+                    </label>
+
+                    <textarea
+                        id="catatanRefleksi"
+                        rows="5"
+                        placeholder="Tuliskan hasil refleksi mengajar..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- SEMESTER -->
+
+                <div class="form-group">
+
+                    <label for="semester">
+                        Semester
+                    </label>
+
+                    <select
+                        id="semester"
+                        required
+                    >
+
+                        <option value="">
+                            Pilih Semester
+                        </option>
+
+                        <option value="1">
+                            Semester 1
+                        </option>
+
+                        <option value="2">
+                            Semester 2
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TAHUN PELAJARAN -->
+
+                <div class="form-group">
+
+                    <label for="tahunPelajaran">
+                        Tahun Pelajaran
+                    </label>
+
+                    <input
+                        type="text"
+                        id="tahunPelajaran"
+                        value="2026/2027"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- RENCANA TINDAK LANJUT -->
+
+                <div class="form-group full">
+
+                    <label for="rencanaTindakLanjut">
+                        Rencana Tindak Lanjut
+                    </label>
+
+                    <textarea
+                        id="rencanaTindakLanjut"
+                        rows="5"
+                        placeholder="Tuliskan rencana tindak lanjut..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- ACTION -->
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    id="btnBatalRefleksi"
+                    class="btn btn-secondary"
+                >
+                    Batal
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Simpan
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- DATA -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h2>
+                    Daftar Refleksi Mengajar
+                </h2>
+
+                <span id="jumlahRefleksi">
+                    0 data
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>No</th>
+
+                        <th>
+                            Kelas
+                        </th>
+
+                        <th>
+                            Mapel
+                        </th>
+
+                        <th>
+                            Tanggal
+                        </th>
+
+                        <th>
+                            CP
+                        </th>
+
+                        <th>
+                            TP
+                        </th>
+
+                        <th>
+                            Model / Metode
+                        </th>
+
+                        <th>
+                            Catatan Refleksi
+                        </th>
+
+                        <th>
+                            Semester
+                        </th>
+
+                        <th>
+                            Tahun Pelajaran
+                        </th>
+
+                        <th>
+                            Rencana Tindak Lanjut
+                        </th>
+
+                        <th>
+                            Aksi
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="refleksiTableBody">
+
+                    <tr>
+
+                        <td
+                            colspan="12"
+                            class="loading"
+                        >
+                            Memuat data...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+
+<script src="js/supabase-config.js"></script>
+
+<script src="js/refleksi.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,295 @@
+ <!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Data Absensi Siswa</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="container absensi-page">
+
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div>
+
+            <h1>
+                Data Absensi Siswa
+            </h1>
+
+            <p>
+                SMP Bhinneka Tunggal Ika
+                Sengonagung, Purwosari, Pasuruan
+            </p>
+
+            <p>
+                Tahun Pelajaran 2026/2027
+            </p>
+
+        </div>
+
+
+        <button
+            id="btnTambahSiswa"
+            class="btn btn-primary"
+        >
+            + Tambah Siswa
+        </button>
+
+    </header>
+
+
+    <!-- INFO -->
+
+    <section class="card absensi-info">
+
+        <div>
+
+            <strong>
+                Kelas:
+            </strong>
+
+            <span>
+                VIII K
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                Tahun Pelajaran:
+            </strong>
+
+            <span>
+                2026/2027
+            </span>
+
+        </div>
+
+
+        <div>
+
+            <strong>
+                Keterangan:
+            </strong>
+
+            <span>
+                H = Hadir | S = Sakit | I = Izin | A = Alpa
+            </span>
+
+        </div>
+
+    </section>
+
+
+    <!-- FORM TAMBAH SISWA -->
+
+    <section
+        id="formAbsensiSection"
+        class="card hidden"
+    >
+
+        <div class="card-header">
+
+            <h2 id="formAbsensiTitle">
+                Tambah Siswa
+            </h2>
+
+        </div>
+
+
+        <form id="absensiForm">
+
+            <input
+                type="hidden"
+                id="absensiId"
+            >
+
+
+            <div class="form-grid">
+
+
+                <!-- NIS -->
+
+                <div class="form-group">
+
+                    <label for="nis">
+                        NIS
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nis"
+                        placeholder="Masukkan NIS"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- NAMA -->
+
+                <div class="form-group">
+
+                    <label for="namaSiswa">
+                        Nama Siswa
+                    </label>
+
+                    <input
+                        type="text"
+                        id="namaSiswa"
+                        placeholder="Nama lengkap siswa"
+                        required
+                    >
+
+                </div>
+
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    id="btnBatalAbsensi"
+                    class="btn btn-secondary"
+                >
+                    Batal
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Simpan
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- TABEL ABSENSI -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h2>
+                    Kehadiran / Pertemuan
+                </h2>
+
+                <span id="jumlahSiswa">
+                    0 siswa
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-container absensi-table-container">
+
+            <table
+                class="absensi-table"
+            >
+
+                <thead>
+
+                    <tr>
+
+                        <th rowspan="2">
+                            No
+                        </th>
+
+                        <th rowspan="2">
+                            NIS
+                        </th>
+
+                        <th rowspan="2">
+                            NAMA
+                        </th>
+
+                        <th
+                            colspan="25"
+                            class="meeting-title"
+                        >
+                            Kehadiran / Pertemuan
+                        </th>
+
+                        <th rowspan="2">
+                            Aksi
+                        </th>
+
+                    </tr>
+
+
+                    <tr id="meetingHeader">
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="absensiTableBody">
+
+                    <tr>
+
+                        <td
+                            colspan="29"
+                            class="loading"
+                        >
+                            Memuat data...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script
+    src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+
+<script src="js/supabase-config.js"></script>
+
+<script src="js/absensi.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lembar Pengayaan</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div>
+            <h1>Lembar Pengayaan</h1>
+            <p>Data kegiatan pengayaan siswa</p>
+        </div>
+
+        <button
+            id="btnTambahPengayaan"
+            class="btn btn-primary"
+        >
+            + Tambah Pengayaan
+        </button>
+
+    </header>
+
+
+    <!-- FORM -->
+
+    <section
+        id="formPengayaanSection"
+        class="card hidden"
+    >
+
+        <div class="card-header">
+
+            <h2 id="formPengayaanTitle">
+                Tambah Lembar Pengayaan
+            </h2>
+
+        </div>
+
+
+        <form id="pengayaanForm">
+
+            <input
+                type="hidden"
+                id="pengayaanId"
+            >
+
+
+            <div class="form-grid">
+
+                <!-- MAPEL -->
+
+                <div class="form-group">
+
+                    <label for="mataPelajaran">
+                        Mata Pelajaran
+                    </label>
+
+                    <input
+                        type="text"
+                        id="mataPelajaran"
+                        placeholder="Contoh: Informatika"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- KELAS SEMESTER -->
+
+                <div class="form-group">
+
+                    <label for="kelasSemester">
+                        Kelas / Semester
+                    </label>
+
+                    <input
+                        type="text"
+                        id="kelasSemester"
+                        placeholder="Contoh: X RPL / Semester 1"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- TANGGAL -->
+
+                <div class="form-group">
+
+                    <label for="tanggal">
+                        Tanggal
+                    </label>
+
+                    <input
+                        type="date"
+                        id="tanggal"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- METODE -->
+
+                <div class="form-group">
+
+                    <label for="metodeKegiatan">
+                        Metode Kegiatan
+                    </label>
+
+                    <input
+                        type="text"
+                        id="metodeKegiatan"
+                        placeholder="Contoh: Diskusi / Praktik"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CP -->
+
+                <div class="form-group full">
+
+                    <label for="capaianPembelajaran">
+                        Capaian Pembelajaran
+                    </label>
+
+                    <textarea
+                        id="capaianPembelajaran"
+                        rows="4"
+                        placeholder="Tuliskan capaian pembelajaran..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- MATERI -->
+
+                <div class="form-group full">
+
+                    <label for="materi">
+                        Materi
+                    </label>
+
+                    <textarea
+                        id="materi"
+                        rows="4"
+                        placeholder="Tuliskan materi pengayaan..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- SOAL -->
+
+                <div class="form-group full">
+
+                    <label for="soal">
+                        Soal
+                    </label>
+
+                    <textarea
+                        id="soal"
+                        rows="5"
+                        placeholder="Tuliskan soal pengayaan..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- SISWA -->
+
+                <div class="form-group full">
+
+                    <label>
+                        6 Siswa yang Perlu Mendapatkan Pengayaan
+                    </label>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="siswa1">
+                        Siswa 1
+                    </label>
+
+                    <input
+                        type="text"
+                        id="siswa1"
+                        placeholder="Nama siswa"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="siswa2">
+                        Siswa 2
+                    </label>
+
+                    <input
+                        type="text"
+                        id="siswa2"
+                        placeholder="Nama siswa"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="siswa3">
+                        Siswa 3
+                    </label>
+
+                    <input
+                        type="text"
+                        id="siswa3"
+                        placeholder="Nama siswa"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="siswa4">
+                        Siswa 4
+                    </label>
+
+                    <input
+                        type="text"
+                        id="siswa4"
+                        placeholder="Nama siswa"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="siswa5">
+                        Siswa 5
+                    </label>
+
+                    <input
+                        type="text"
+                        id="siswa5"
+                        placeholder="Nama siswa"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="siswa6">
+                        Siswa 6
+                    </label>
+
+                    <input
+                        type="text"
+                        id="siswa6"
+                        placeholder="Nama siswa"
+                    >
+
+                </div>
+
+
+                <!-- NOMOR SOAL -->
+
+                <div class="form-group full">
+
+                    <label for="nomorSoalPengayaan">
+                        Nomor Soal Berkaitan dengan Materi
+                        yang Perlu Diadakan Pengayaan
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nomorSoalPengayaan"
+                        placeholder="Contoh: 2, 4, 6, 8"
+                    >
+
+                </div>
+
+
+                <!-- KEPALA SEKOLAH -->
+
+                <div class="form-group">
+
+                    <label for="kepalaSekolah">
+                        Kepala Sekolah
+                    </label>
+
+                    <input
+                        type="text"
+                        id="kepalaSekolah"
+                        value="Drs. Moh. Mas'ud, S.Pd., M.Pd"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="nipKepalaSekolah">
+                        NIP Kepala Sekolah
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nipKepalaSekolah"
+                        placeholder="Masukkan NIP"
+                    >
+
+                </div>
+
+
+                <!-- GURU -->
+
+                <div class="form-group">
+
+                    <label for="guruMataPelajaran">
+                        Guru Mata Pelajaran
+                    </label>
+
+                    <input
+                        type="text"
+                        id="guruMataPelajaran"
+                        placeholder="Nama guru"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="nipGuru">
+                        NIP Guru
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nipGuru"
+                        placeholder="Masukkan NIP"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- BUTTON -->
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    id="btnBatalPengayaan"
+                    class="btn btn-secondary"
+                >
+                    Batal
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Simpan
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- TABLE -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h2>
+                    Daftar Lembar Pengayaan
+                </h2>
+
+                <span id="jumlahPengayaan">
+                    0 data
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>No</th>
+
+                        <th>
+                            Mata Pelajaran
+                        </th>
+
+                        <th>
+                            Capaian Pembelajaran
+                        </th>
+
+                        <th>
+                            Kelas / Semester
+                        </th>
+
+                        <th>
+                            Tanggal
+                        </th>
+
+                        <th>
+                            Metode Kegiatan
+                        </th>
+
+                        <th>
+                            Materi
+                        </th>
+
+                        <th>
+                            Soal
+                        </th>
+
+                        <th>
+                            6 Siswa
+                        </th>
+
+                        <th>
+                            Nomor Soal Pengayaan
+                        </th>
+
+                        <th>
+                            Kepala Sekolah
+                        </th>
+
+                        <th>
+                            NIP Kepala Sekolah
+                        </th>
+
+                        <th>
+                            Guru Mata Pelajaran
+                        </th>
+
+                        <th>
+                            NIP Guru
+                        </th>
+
+                        <th>
+                            Aksi
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="pengayaanTableBody">
+
+                    <tr>
+
+                        <td
+                            colspan="15"
+                            class="loading"
+                        >
+                            Memuat data...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/supabase-config.js"></script>
+<script src="js/pengayaan.js"></script>
+
+</body>
+
+</html>

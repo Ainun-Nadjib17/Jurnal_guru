@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jurnal Kegiatan Mengajar</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div>
+            <h1>Jurnal Kegiatan Mengajar</h1>
+            <p>Catatan kegiatan pembelajaran</p>
+        </div>
+
+        <button
+            id="btnTambahJurnal"
+            class="btn btn-primary"
+        >
+            + Tambah Jurnal
+        </button>
+
+    </header>
+
+
+    <!-- FORM -->
+
+    <section
+        id="formJurnalSection"
+        class="card hidden"
+    >
+
+        <div class="card-header">
+
+            <h2 id="formJurnalTitle">
+                Tambah Jurnal
+            </h2>
+
+        </div>
+
+
+        <form id="jurnalForm">
+
+            <input
+                type="hidden"
+                id="jurnalId"
+            >
+
+
+            <div class="form-grid">
+
+                <!-- HARI TANGGAL -->
+
+                <div class="form-group">
+
+                    <label for="hariTanggal">
+                        Hari & Tanggal
+                    </label>
+
+                    <input
+                        type="date"
+                        id="hariTanggal"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- JAM KE -->
+
+                <div class="form-group">
+
+                    <label for="jamKe">
+                        Jam Ke
+                    </label>
+
+                    <input
+                        type="text"
+                        id="jamKe"
+                        placeholder="Contoh: 1-2"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- KELAS -->
+
+                <div class="form-group">
+
+                    <label for="kelas">
+                        Kelas
+                    </label>
+
+                    <input
+                        type="text"
+                        id="kelas"
+                        placeholder="Contoh: X RPL 1"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- MAPEL -->
+
+                <div class="form-group">
+
+                    <label for="mapel">
+                        Mapel
+                    </label>
+
+                    <input
+                        type="text"
+                        id="mapel"
+                        placeholder="Contoh: Informatika"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- JURNAL -->
+
+                <div class="form-group full">
+
+                    <label for="jurnalKegiatan">
+                        Jurnal Kegiatan Mengajar
+                    </label>
+
+                    <textarea
+                        id="jurnalKegiatan"
+                        rows="4"
+                        placeholder="Tuliskan kegiatan pembelajaran..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- CP -->
+
+                <div class="form-group full">
+
+                    <label for="capaianPembelajaran">
+                        Capaian Pembelajaran
+                    </label>
+
+                    <textarea
+                        id="capaianPembelajaran"
+                        rows="4"
+                        placeholder="Tuliskan capaian pembelajaran..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- TP -->
+
+                <div class="form-group full">
+
+                    <label for="tujuanPembelajaran">
+                        Tujuan Pembelajaran
+                    </label>
+
+                    <textarea
+                        id="tujuanPembelajaran"
+                        rows="4"
+                        placeholder="Tuliskan tujuan pembelajaran..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- CATATAN -->
+
+                <div class="form-group full">
+
+                    <label for="catatanRefleksi">
+                        Catatan / Refleksi
+                    </label>
+
+                    <textarea
+                        id="catatanRefleksi"
+                        rows="4"
+                        placeholder="Tuliskan catatan atau refleksi..."
+                    ></textarea>
+
+                </div>
+
+            </div>
+
+
+            <!-- ACTION -->
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    id="btnBatalJurnal"
+                    class="btn btn-secondary"
+                >
+                    Batal
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Simpan
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- DATA -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h2>
+                    Daftar Jurnal
+                </h2>
+
+                <span id="jumlahJurnal">
+                    0 jurnal
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>No</th>
+
+                        <th>Hari & Tanggal</th>
+
+                        <th>Jam Ke</th>
+
+                        <th>Kelas</th>
+
+                        <th>Mapel</th>
+
+                        <th>
+                            Jurnal Kegiatan Mengajar
+                        </th>
+
+                        <th>
+                            Capaian Pembelajaran
+                        </th>
+
+                        <th>
+                            Tujuan Pembelajaran
+                        </th>
+
+                        <th>
+                            Catatan / Refleksi
+                        </th>
+
+                        <th>
+                            Aksi
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="jurnalTableBody">
+
+                    <tr>
+
+                        <td
+                            colspan="10"
+                            class="loading"
+                        >
+                            Memuat data...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/supabase-config.js"></script>
+<script src="js/jurnal.js"></script>
+
+</body>
+
+</html> 

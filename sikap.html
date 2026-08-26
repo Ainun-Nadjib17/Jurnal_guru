@@ -1,0 +1,359 @@
+ <!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Catatan Sikap & Perilaku</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div>
+            <h1>Catatan Sikap & Perilaku</h1>
+            <p>Catatan sikap dan perilaku siswa</p>
+        </div>
+
+        <button
+            id="btnTambahSikap"
+            class="btn btn-primary"
+        >
+            + Tambah Catatan
+        </button>
+
+    </header>
+
+
+    <!-- FORM -->
+
+    <section
+        id="formSikapSection"
+        class="card hidden"
+    >
+
+        <div class="card-header">
+
+            <h2 id="formSikapTitle">
+                Tambah Catatan
+            </h2>
+
+        </div>
+
+
+        <form id="sikapForm">
+
+            <input
+                type="hidden"
+                id="sikapId"
+            >
+
+
+            <div class="form-grid">
+
+                <!-- NO -->
+
+                <div class="form-group">
+
+                    <label for="no">
+                        No
+                    </label>
+
+                    <input
+                        type="number"
+                        id="no"
+                        min="1"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- MAPEL -->
+
+                <div class="form-group">
+
+                    <label for="mapel">
+                        Mapel
+                    </label>
+
+                    <input
+                        type="text"
+                        id="mapel"
+                        placeholder="Contoh: Informatika"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- TANGGAL -->
+
+                <div class="form-group">
+
+                    <label for="tanggal">
+                        Tanggal
+                    </label>
+
+                    <input
+                        type="date"
+                        id="tanggal"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- NAMA SISWA -->
+
+                <div class="form-group">
+
+                    <label for="namaSiswa">
+                        Nama Siswa
+                    </label>
+
+                    <input
+                        type="text"
+                        id="namaSiswa"
+                        placeholder="Nama lengkap siswa"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- CATATAN -->
+
+                <div class="form-group full">
+
+                    <label for="catatanSikapPerilaku">
+                        Catatan Sikap dan Perilaku
+                    </label>
+
+                    <textarea
+                        id="catatanSikapPerilaku"
+                        rows="4"
+                        placeholder="Tuliskan catatan sikap dan perilaku siswa..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- SEMESTER -->
+
+                <div class="form-group">
+
+                    <label for="semester">
+                        Semester
+                    </label>
+
+                    <select
+                        id="semester"
+                        required
+                    >
+
+                        <option value="">
+                            Pilih Semester
+                        </option>
+
+                        <option value="1">
+                            Semester 1
+                        </option>
+
+                        <option value="2">
+                            Semester 2
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- TAHUN PELAJARAN -->
+
+                <div class="form-group">
+
+                    <label for="tahunPelajaran">
+                        Tahun Pelajaran
+                    </label>
+
+                    <input
+                        type="text"
+                        id="tahunPelajaran"
+                        placeholder="Contoh: 2026/2027"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- TINDAKAN GURU -->
+
+                <div class="form-group full">
+
+                    <label for="tindakanGuru">
+                        Tindakan Guru
+                    </label>
+
+                    <textarea
+                        id="tindakanGuru"
+                        rows="4"
+                        placeholder="Tuliskan tindakan yang dilakukan guru..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <!-- TTD -->
+
+                <div class="form-group full">
+
+                    <label for="ttdSiswa">
+                        TTD Siswa
+                    </label>
+
+                    <input
+                        type="text"
+                        id="ttdSiswa"
+                        placeholder="Nama / keterangan tanda tangan"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <!-- BUTTON -->
+
+            <div class="form-actions">
+
+                <button
+                    type="button"
+                    id="btnBatalSikap"
+                    class="btn btn-secondary"
+                >
+                    Batal
+                </button>
+
+                <button
+                    type="submit"
+                    class="btn btn-primary"
+                >
+                    Simpan
+                </button>
+
+            </div>
+
+        </form>
+
+    </section>
+
+
+    <!-- TABLE -->
+
+    <section class="card">
+
+        <div class="card-header">
+
+            <div>
+
+                <h2>
+                    Data Catatan Sikap
+                </h2>
+
+                <span id="jumlahSikap">
+                    0 catatan
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="table-container">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>No</th>
+
+                        <th>Mapel</th>
+
+                        <th>Tanggal</th>
+
+                        <th>Nama Siswa</th>
+
+                        <th>
+                            Catatan Sikap dan Perilaku
+                        </th>
+
+                        <th>
+                            Semester
+                        </th>
+
+                        <th>
+                            Tahun Pelajaran
+                        </th>
+
+                        <th>
+                            Tindakan Guru
+                        </th>
+
+                        <th>
+                            TTD Siswa
+                        </th>
+
+                        <th>
+                            Aksi
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="sikapTableBody">
+
+                    <tr>
+
+                        <td
+                            colspan="10"
+                            class="loading"
+                        >
+                            Memuat data...
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="js/supabase-config.js"></script>
+<script src="js/sikap.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Manajemen Tugas</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <div>
+                <h1>Manajemen Tugas</h1>
+                <p>Kelola daftar tugas dengan mudah</p>
+            </div>
+
+            <button id="btnTambah" class="btn btn-primary">
+                + Tambah Tugas
+            </button>
+        </header>
+
+
+        <!-- FORM -->
+        <section id="formSection" class="card hidden">
+
+            <div class="card-header">
+                <h2 id="formTitle">Tambah Tugas</h2>
+            </div>
+
+            <form id="tugasForm">
+
+                <input type="hidden" id="tugasId">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="no">No</label>
+                        <input
+                            type="number"
+                            id="no"
+                            min="1"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tp">TP</label>
+                        <input
+                            type="text"
+                            id="tp"
+                            placeholder="Masukkan TP"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group full">
+                        <label for="bentukTugas">
+                            Bentuk Tugas
+                        </label>
+
+                        <textarea
+                            id="bentukTugas"
+                            rows="3"
+                            placeholder="Contoh: Membuat laporan..."
+                            required
+                        ></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sifatPengerjaan">
+                            Sifat Pengerjaan
+                        </label>
+
+                        <select id="sifatPengerjaan" required>
+                            <option value="">
+                                Pilih sifat pengerjaan
+                            </option>
+
+                            <option value="Mandiri">
+                                Mandiri
+                            </option>
+
+                            <option value="Kelompok">
+                                Kelompok
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tempatPengerjaan">
+                            Tempat Pengerjaan
+                        </label>
+
+                        <select id="tempatPengerjaan" required>
+                            <option value="">
+                                Pilih tempat pengerjaan
+                            </option>
+
+                            <option value="Dalam Kelas">
+                                Dalam Kelas
+                            </option>
+
+                            <option value="Luar Kelas">
+                                Luar Kelas
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tanggalMulai">
+                            Tanggal Mulai
+                        </label>
+
+                        <input
+                            type="date"
+                            id="tanggalMulai"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pukulMulai">
+                            Pukul Mulai
+                        </label>
+
+                        <input
+                            type="time"
+                            id="pukulMulai"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tanggalSelesai">
+                            Tanggal Selesai
+                        </label>
+
+                        <input
+                            type="date"
+                            id="tanggalSelesai"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pukulSelesai">
+                            Pukul Selesai
+                        </label>
+
+                        <input
+                            type="time"
+                            id="pukulSelesai"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        id="btnBatal"
+                        class="btn btn-secondary"
+                    >
+                        Batal
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="btn btn-primary"
+                    >
+                        Simpan
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- DAFTAR TUGAS -->
+        <section class="card">
+
+            <div class="card-header">
+                <div>
+                    <h2>Daftar Tugas</h2>
+                    <span id="jumlahTugas">
+                        0 tugas
+                    </span>
+                </div>
+            </div>
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>TP</th>
+                            <th>Bentuk Tugas</th>
+                            <th>Sifat</th>
+                            <th>Tempat</th>
+                            <th>Mulai</th>
+                            <th>Selesai</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tugasTableBody">
+
+                        <tr>
+                            <td colspan="8" class="loading">
+                                Memuat data...
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <script src="js/supabase-config.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>
